@@ -39,7 +39,7 @@ class Response extends SymfonyResponse
     /**
      * @return SwooleResponse
      */
-    public function getSwooleResponse(): SwooleResponse
+    public function getSwooleResponse()
     {
         return $this->swooleResponse;
     }
@@ -47,7 +47,7 @@ class Response extends SymfonyResponse
     /**
      * @inheritDoc
      */
-    public function sendHeaders(): Response
+    public function sendHeaders()
     {
         /* RFC2616 - 14.18 says all Responses need to have a Date */
         if (!$this->headers->has('Date')) {
@@ -79,7 +79,7 @@ class Response extends SymfonyResponse
      * @param string $value
      * @return Response
      */
-    public function addHeader(string $key, string $value): Response
+    public function addHeader(string $key, string $value)
     {
         $this->headers->set($key, $value);
         
@@ -90,7 +90,7 @@ class Response extends SymfonyResponse
      * @param array $headers
      * @return $this
      */
-    public function addHeaders(array $headers): Response
+    public function addHeaders(array $headers)
     {
         foreach ($headers as $key => $header) {
             $this->addHeader($key, $header);
@@ -102,7 +102,7 @@ class Response extends SymfonyResponse
     /**
      * @inheritDoc
      */
-    public function sendContent(): Response
+    public function sendContent()
     {
         $this->getSwooleResponse()->end($this->content);
         
@@ -112,7 +112,7 @@ class Response extends SymfonyResponse
     /**
      * @inheritDoc
      */
-    public function send(): Response
+    public function send()
     {
         $this->sendHeaders();
         $this->sendContent();

@@ -59,9 +59,10 @@ class Request extends SymfonyRequest
      * 设置fd
      *
      * @param int $fd
+     *
      * @return $this
      */
-    protected function setFd(int $fd): Request
+    protected function setFd(int $fd)
     {
         $this->fd = $fd;
         
@@ -71,7 +72,7 @@ class Request extends SymfonyRequest
     /**
      * @return int
      */
-    public function getFd(): int
+    public function getFd()
     {
         return $this->fd;
     }
