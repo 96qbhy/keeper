@@ -93,7 +93,7 @@ class Response extends SymfonyResponse
     public function addHeaders(array $headers): Response
     {
         foreach ($headers as $key => $header) {
-            $this->headers->set($key, $header);
+            $this->addHeader($key, $header);
         }
         
         return $this;
