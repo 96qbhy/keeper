@@ -12,9 +12,9 @@ use Closure;
 use Dybasedev\Keeper\Http\Interfaces\ExceptionHandler;
 use Dybasedev\Keeper\Http\Interfaces\WorkerHookDelegation;
 use Dybasedev\Keeper\Http\KeeperBaseController;
-use Dybasedev\Keeper\Module\Interfaces\DestructibleModuleProvider;
-use Dybasedev\Keeper\Module\Interfaces\ModuleProvider;
 use Dybasedev\Keeper\Routing\Pipeline;
+use Dybasedev\KeeperContracts\Module\DestructibleModuleProvider;
+use Dybasedev\KeeperContracts\Module\ModuleProvider;
 use RuntimeException;
 use Swoole\Http\Request as SwooleHttpRequest;
 use Swoole\Http\Response as SwooleHttpResponse;
@@ -36,6 +36,11 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
+/**
+ * Class KeeperHttpService
+ *
+ * @package Dybasedev\Keeper\Http\HttpServices
+ */
 class KeeperHttpService implements HttpService
 {
     /**
