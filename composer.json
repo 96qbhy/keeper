@@ -1,5 +1,5 @@
 {
-  "name": "96qbhy/keeper",
+  "name": "dybasedev/keeper",
   "description": "基于 Swoole 开发的 Server 框架",
   "minimum-stability": "stable",
   "license": "MIT",
